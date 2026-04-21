@@ -1,0 +1,17 @@
+# Ignore root filesystems
+boilerplate/rootfs-base/
+boilerplate/rootfs-alpha/
+boilerplate/rootfs-beta/
+
+# Ignore logs
+boilerplate/logs/
+
+# Ignore build files
+boilerplate/*.o
+boilerplate/*.ko
+boilerplate/*.mod.*
+boilerplate/Module.symvers
+boilerplate/modules.order
+
+# Ignore downloads
+*.tar.gz

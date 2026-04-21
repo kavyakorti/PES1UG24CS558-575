@@ -1,41 +1,29 @@
 obj-m += monitor.o
 
 KDIR := /lib/modules/$(shell uname -r)/build
-PWD := $(shell pwd)
-# If you want host-built workload binaries to run directly inside an Alpine
-# rootfs, you can override this with WORKLOAD_LDFLAGS=-static when your
-# toolchain supports it.
-WORKLOAD_LDFLAGS ?= -static
+PWD  := $(shell pwd)
 
-USER_TARGETS := engine memory_hog cpu_hog io_pulse
+CC=gcc
+CFLAGS=-Wall -Wextra -pthread
 
-all: $(USER_TARGETS) module
-
-ci: WORKLOAD_LDFLAGS =
-ci: $(USER_TARGETS)
-
-module: monitor.ko
+all: engine cpu_hog io_pulse memory_hog kernel
 
 engine: engine.c monitor_ioctl.h
-	gcc -O2 -Wall -Wextra -o engine engine.c -lpthread
-
-memory_hog: memory_hog.c
-	gcc -O2 -Wall $(WORKLOAD_LDFLAGS) -o memory_hog memory_hog.c
+	$(CC) $(CFLAGS) -o engine engine.c
 
 cpu_hog: cpu_hog.c
-	gcc -O2 -Wall $(WORKLOAD_LDFLAGS) -o cpu_hog cpu_hog.c
+	$(CC) -Wall -Wextra -o cpu_hog cpu_hog.c
 
 io_pulse: io_pulse.c
-	gcc -O2 -Wall $(WORKLOAD_LDFLAGS) -o io_pulse io_pulse.c
+	$(CC) -Wall -Wextra -o io_pulse io_pulse.c
 
-monitor.ko: monitor.c monitor_ioctl.h
+memory_hog: memory_hog.c
+	$(CC) -Wall -Wextra -o memory_hog memory_hog.c
+
+kernel:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
 
-clean:
-	if [ -d "$(KDIR)" ]; then $(MAKE) -C $(KDIR) M=$(PWD) clean; fi
-	rm -f $(USER_TARGETS) *.o *.mod *.mod.c *.symvers *.order
-	rm -f *.log
-	rm -rf logs
-	rm -f /tmp/mini_runtime.sock
+ci: engine cpu_hog io_pulse memory_hog
 
-.PHONY: all ci module clean
+clean:
+	rm -f engine cpu_hog io_pulse memory_hog *.o *.ko *.mod.* Module.symvers modules.order
