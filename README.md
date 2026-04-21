@@ -178,8 +178,8 @@ sudo dmesg | tail -n 30
 ## 📸 Screenshots
 
 ###  1. Build Process
+<img width="753" height="248" alt="image" src="https://github.com/user-attachments/assets/24c1af72-299d-42fa-9e7b-6cd3e4ad58d9" />
 
-📸 Insert screenshot of:
 
 ```bash
 make
