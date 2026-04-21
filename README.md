@@ -189,7 +189,8 @@ make
 
 ### 2. Kernel Module Loaded
 
-📸 Insert screenshot of:
+<img width="1879" height="111" alt="image" src="https://github.com/user-attachments/assets/12bc8684-a89b-4ecf-9a13-88db40aa1a3b" />
+
 
 ```bash
 sudo insmod monitor.ko
