@@ -270,7 +270,7 @@ sudo dmesg | tail -n 30
 
 
 
-###  10. Process Check
+###  9. Process Check
 
 <img width="1206" height="90" alt="image" src="https://github.com/user-attachments/assets/2e42c125-ab40-47f2-8f1b-1dc7dcb93292" />
 
@@ -281,7 +281,7 @@ ps aux | grep defunct
 
 ---
 
-### 11. Logs Directory
+### 10. Logs Directory
 <img width="745" height="142" alt="image" src="https://github.com/user-attachments/assets/4f028c0b-ec02-4bca-9c49-cccab934d5d8" />
 
 
