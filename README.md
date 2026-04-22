@@ -1,8 +1,10 @@
 #  OS Jackfruit – Mini Container Runtime with Memory Monitoring
-   Team Information
-Name	             SRN
-Kavya P Korti	  PES1UG24CS575
-Arati           PES1UG24CS558
+##  Team Information
+
+| Name            | SRN             |
+|-----------------|-----------------|
+| Kavya P Korti   | PES1UG24CS575   |
+| Arati           | PES1UG24CS558   |
 
 ##  Overview
 
