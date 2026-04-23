@@ -1,6 +1,8 @@
 #  OS Jackfruit – Mini Container Runtime with Memory Monitoring
 ##  Team Information
 
+> **Team Members**
+
 | Name            | SRN             |
 |-----------------|-----------------|
 | Kavya P Korti   | PES1UG24CS575   |
@@ -40,7 +42,7 @@ It supports:
   * Soft limit detection
   * Hard limit enforcement (SIGKILL)
 
-### Workload Programs
+###  Workload Programs
 
 * `cpu_hog.c` → CPU intensive
 * `io_pulse.c` → IO simulation
@@ -69,7 +71,7 @@ OS-Jackfruit/
 
 ---
 
-## Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone Repository
 
@@ -181,11 +183,11 @@ sudo dmesg | tail -n 30
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ###  1. Build Process
-<img width="1366" height="768" alt="WhatsApp Image 2026-04-21 at 11 05 07 PM" src="https://github.com/user-attachments/assets/f26f5b5b-eaa1-4acd-a0c0-5003ce768248" />
 
+<img width="847" height="201" alt="image" src="https://github.com/user-attachments/assets/f25b1b73-e786-46e6-9d6f-8bb0aeff2f86" />
 
 
 ```bash
@@ -194,9 +196,9 @@ make
 
 ---
 
-### 2. Kernel Module Loaded
+###  2. Kernel Module Loaded
 
-<img width="1879" height="111" alt="image" src="https://github.com/user-attachments/assets/12bc8684-a89b-4ecf-9a13-88db40aa1a3b" />
+<img width="1032" height="105" alt="image" src="https://github.com/user-attachments/assets/52de2531-5e3e-4707-8142-3970ed1d9569" />
 
 
 ```bash
@@ -208,7 +210,7 @@ ls -l /dev/container_monitor
 
 ###  3. Supervisor Running
 
-<img width="1206" height="90" alt="image" src="https://github.com/user-attachments/assets/305ef686-0ccd-40d3-9426-70f3037188f0" />
+<img width="1062" height="67" alt="image" src="https://github.com/user-attachments/assets/78668736-dac3-49c9-89e2-05930d6f141d" />
 
 
 ```bash
@@ -217,11 +219,20 @@ sudo ./engine supervisor ./rootfs-base
 
 ---
 
+###  4. Starting Containers
+
+<img width="1057" height="137" alt="image" src="https://github.com/user-attachments/assets/22087bb6-c880-4c8d-ae8a-72239c1eea71" />
 
 
-### 4. Container Status
+```bash
+sudo ./engine start alpha ...
+sudo ./engine start beta ...
+```
 
-<img width="604" height="95" alt="image" src="https://github.com/user-attachments/assets/94855922-9929-4d7e-aed3-56e4319d10d5" />
+---
+
+###  5. Container Status
+<img width="603" height="97" alt="image" src="https://github.com/user-attachments/assets/8285b7e5-856e-4385-9b9c-60c6adb64800" />
 
 
 ```bash
@@ -230,8 +241,9 @@ sudo ./engine ps
 
 ---
 
-### 5. CPU Logs
-<img width="742" height="247" alt="image" src="https://github.com/user-attachments/assets/471655ac-c0a2-4fd1-b004-d583a4abf1d4" />
+###  6. CPU Logs
+
+<img width="689" height="233" alt="image" src="https://github.com/user-attachments/assets/7bc01cb3-5641-48d0-b1e6-17ae823cd817" />
 
 
 ```bash
@@ -240,9 +252,10 @@ sudo ./engine logs alpha
 
 ---
 
-### 6. IO Logs
+###  7. IO Logs
 
-<img width="716" height="467" alt="image" src="https://github.com/user-attachments/assets/0641358b-e801-419b-b8d6-2d284f55579d" />
+<img width="659" height="418" alt="image" src="https://github.com/user-attachments/assets/f656f626-fafc-4943-a00c-1345d21179ac" />
+
 
 ```bash
 sudo ./engine logs beta
@@ -250,22 +263,21 @@ sudo ./engine logs beta
 
 ---
 
-### 7. Memory Container Start
+###  8. Memory Container Start
 
-<img width="695" height="60" alt="image" src="https://github.com/user-attachments/assets/6a0e740e-f03d-4a96-9e2c-091462e12313" />
+<img width="1057" height="88" alt="image" src="https://github.com/user-attachments/assets/e1f382a2-d5e5-4ccf-8aa6-01ffbd80dafd" />
 
 
 ```bash
-sudo ./engine stop mem1 ...
+sudo ./engine start mem1 ...
 ```
 
 ---
 
-### 8. Memory Limit Logs
+###  9. Memory Limit Logs
 
-<img width="1201" height="534" alt="image" src="https://github.com/user-attachments/assets/5c2973bf-d8eb-4172-97c8-4ab8ecc03a0d" />
-<img width="1215" height="754" alt="image" src="https://github.com/user-attachments/assets/70a776b0-d1c5-4495-9af4-b63a9fb8a8ca" />
-
+<img width="1068" height="418" alt="image" src="https://github.com/user-attachments/assets/589e9378-7c10-4e23-ad88-e0842e6a0cca" />
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/e74a70e6-cd2a-4317-a2d7-b9c81d584a76" />
 
 
 ```bash
@@ -274,11 +286,20 @@ sudo dmesg | tail -n 30
 
 ---
 
+###  10. Final Container Status
+
+<img width="611" height="118" alt="image" src="https://github.com/user-attachments/assets/26a99d91-8115-41e1-8770-6e03ab3b341e" />
 
 
-###  9. Process Check
+```bash
+sudo ./engine ps
+```
 
-<img width="1206" height="90" alt="image" src="https://github.com/user-attachments/assets/2e42c125-ab40-47f2-8f1b-1dc7dcb93292" />
+---
+
+### 🔍 11. Process Check
+
+<img width="1726" height="95" alt="image" src="https://github.com/user-attachments/assets/426c8a1a-507a-4786-a203-b2c2d3c3cc9f" />
 
 
 ```bash
@@ -287,8 +308,9 @@ ps aux | grep defunct
 
 ---
 
-### 10. Logs Directory
-<img width="745" height="142" alt="image" src="https://github.com/user-attachments/assets/4f028c0b-ec02-4bca-9c49-cccab934d5d8" />
+###  12. Logs Directory
+
+<img width="1157" height="200" alt="image" src="https://github.com/user-attachments/assets/b826f4eb-c926-440a-b864-d13bc4467d8f" />
 
 
 ```bash
@@ -298,6 +320,10 @@ ls -l logs
 ---
 
 ##  Cleanup
+<img width="687" height="125" alt="image" src="https://github.com/user-attachments/assets/86334535-5f4a-4b9a-93b3-7c0d96bbd495" />
+<img width="718" height="61" alt="image" src="https://github.com/user-attachments/assets/f06e13b3-8bfe-40b6-a39f-ed9db638ae4f" />
+
+
 
 ```bash
 sudo ./engine stop alpha
@@ -307,11 +333,11 @@ sudo ./engine stop mem1
 sudo rmmod monitor
 ```
 
+
+
 ---
 
-
-
-##  Conclusion
+## ✅ Conclusion
 
 This project demonstrates:
 
