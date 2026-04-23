@@ -277,7 +277,8 @@ sudo ./engine start mem1 ...
 ###  9. Memory Limit Logs
 
 <img width="1068" height="418" alt="image" src="https://github.com/user-attachments/assets/589e9378-7c10-4e23-ad88-e0842e6a0cca" />
-<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/e74a70e6-cd2a-4317-a2d7-b9c81d584a76" />
+<img width="1067" height="634" alt="image" src="https://github.com/user-attachments/assets/20129d47-89a3-43c6-8196-10fb4aa5db12" />
+
 
 
 ```bash
